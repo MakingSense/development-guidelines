@@ -4,7 +4,6 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.8.3/gitgraph.min.css" />
 	</head>
 	<body>
-		<canvas id="workStartedGraph" />
 		<script>
 			const gitGraphTemplate = {
 				colors: ["#C7C7C7", "#80cfc5", "#f1c109"],
@@ -27,7 +26,10 @@
 				}
 			};
 			const gitGraphCompiledTemplate = new GitGraph.Template(gitGraphTemplate);
+		</script>
 
+		<canvas id="workStartedGraph"> </canvas>
+		<script>
 			(function() {
 				let gitGraph = new GitGraph({
 					template: gitGraphCompiledTemplate,
@@ -44,6 +46,33 @@
 					name: 'CFP-25-new-login-page'
 				});
 				featureBranch.commit('(pending changes)');
+			}());
+		</script>
+
+		<canvas id="workStartedGraphParallel"> </canvas>
+		<script>
+			(function() {
+				let gitGraph = new GitGraph({
+					template: gitGraphCompiledTemplate,
+					reverseArrow: true,
+					orientation: 'horizontal',
+					mode: 'extended',
+					elementId: 'workStartedGraphParallel'
+				});
+
+				let master = gitGraph.branch('master');
+				master = master.commit('Initial commit');
+				let featureBranch = gitGraph.branch({
+					parentBranch: master,
+					name: 'CFP-25-new-login-page'
+				});
+				featureBranch.commit('(pending changes)');
+
+				let secondFeatureBranch = gitGraph.branch({
+					parentBranch:  master,
+					name: 'CFP-26-rework-styles'
+				});
+				secondFeatureBranch.commit('(pending changes');
 			}());
 		</script>
 	</body>

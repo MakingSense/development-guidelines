@@ -37,6 +37,12 @@ Note that while now Dimitri has a branch starting off from `master`, there are n
 
 Regarding the branch name, the `CFP-25` portion helps finding that particular branch between a lot other branches. The rest of the branch name is to make it easier to see, or to add more branches for the same ticket (for example, bug fixes or adjustments that require a branch of their own).
 
+<img src="images/workStartedParallel.png" alt="work started in parallel" align="left" />
+
+Also note that this may be repeated any amount of times.
+
+While Dimitri is working on his changes, Paul has also started with changes of his own. You can see those listed in a new branch, `CFP-26-rework-styles`. We don't know what Paul is doing in detail, but with this information, we know enough to find it out. However, let's stick with Dimitri.
+
 <br clear="both" />
 
 ## Development: commits
