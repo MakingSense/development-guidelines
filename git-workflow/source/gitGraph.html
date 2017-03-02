@@ -1,0 +1,50 @@
+<html>
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.8.3/gitgraph.min.js"></script>
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/gitgraph.js/1.8.3/gitgraph.min.css" />
+	</head>
+	<body>
+		<canvas id="workStartedGraph" />
+		<script>
+			const gitGraphTemplate = {
+				colors: ["#C7C7C7", "#80cfc5", "#f1c109"],
+				branch: {
+					lineWidth: 8,
+					spacingX: 50,
+					showLabel: true,
+				},
+				commit: {
+					spacingY: -80,
+					dot: {
+						size: 14
+					},
+					message: {
+						displayAuthor: true,
+						displayBranch: true,
+						displayHash: false,
+						//font: 'normal 18pt Arial' -- does this even work?
+					}
+				}
+			};
+			const gitGraphCompiledTemplate = new GitGraph.Template(gitGraphTemplate);
+
+			(function() {
+				let gitGraph = new GitGraph({
+					template: gitGraphCompiledTemplate,
+					reverseArrow: true,
+					orientation: 'horizontal',
+					mode: 'extended',
+					elementId: 'workStartedGraph'
+				});
+
+				let master = gitGraph.branch('master');
+				master = master.commit('Initial commit');
+				let featureBranch = gitGraph.branch({
+					parentBranch: master,
+					name: 'CFP-25-new-login-page'
+				});
+				featureBranch.commit('(pending changes)');
+			}());
+		</script>
+	</body>
+</html>
