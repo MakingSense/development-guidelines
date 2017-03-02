@@ -33,7 +33,9 @@ git checkout -b CFP-25-new-login-page
 
 <img src="images/workStarted.png" alt="work started" align="left" />
 
-The `CFP-25` portion helps finding that particular branch between a lot other branches. The rest of the branch name is to make it easier to see, or to add more branches for the same ticket (for example, bug fixes or adjustments that require a branch of their own).
+Note that while now Dimitri has a branch starting off from `master`, there are no extra changes from him. Even if he hasn't commited, every pending change is now in his local work folder.
+
+Regarding the branch name, the `CFP-25` portion helps finding that particular branch between a lot other branches. The rest of the branch name is to make it easier to see, or to add more branches for the same ticket (for example, bug fixes or adjustments that require a branch of their own).
 
 <br clear="both" />
 
