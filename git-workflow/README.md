@@ -8,6 +8,8 @@ We call our development workflow with git **git-rebase-squash**, because of the 
 
 Even if you know nothing about it, feel free to read below to discover how we work with it.
 
+<br clear="both" />
+
 ## The team
 
 The workflow will go through a few days of work of a fictional team, that is composed of:
