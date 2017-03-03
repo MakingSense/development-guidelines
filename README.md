@@ -9,3 +9,4 @@ Please note that this repository focus on methodologies, processes and general h
 ----
 
 1. Git workflow: [git-rebase-squash](git-workflow/README.md)
+    1. Git conventions [git-conventions](git-workflow/conventions.md)

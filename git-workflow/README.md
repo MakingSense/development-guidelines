@@ -8,6 +8,8 @@ We call our development workflow with git **git-rebase-squash**, because of the 
 
 Even if you know nothing about it, feel free to read below to discover how we work with it.
 
+If you want some guidelines on what rules to follow for git usage, you should read our guideline on [git conventions](conventions.md)
+
 <br clear="both" />
 
 ## The team
