@@ -79,11 +79,25 @@ Good example:
 
 Bad examples:
 
+- `fixHTTPHeaders`
+- `fix_http_headers`
+
 Good examples:
+
+- `fix-http-headers`
 
 **2.2.** Avoid strange characters.
 
 Avoid characters that could be troublesome to command interpreters at all costs (`"`, `'`, `\`, `&`, `*`, `(`, `)`, `[`, `]`, `{`, `}`).
+
+Bad examples:
+
+- `add-*-as-wildcard-support` (so many people are going to hate you for this one)
+- `add wildcard support` (spaces)
+
+Good examples:
+
+- `add-asterisk-to-wildcard-support`
 
 **2.1.** Do NOT include your username or the current date in the branch name.
 
@@ -95,8 +109,17 @@ Bad examples:
 
 Good examples:
 
-2.2. Include the ticket name
+- `fix-my-bug`
 
+**2.2.** Include the ticket name in the branch name
+
+Bad examples:
+
+- `fix-my-bug`
+
+Good examples:
+
+- `CFP-11-fix-memory-leak`
 
 ## 3. Tag names
 
@@ -104,17 +127,46 @@ Good examples:
 
 You can extend it to `vM.m.b`, `vM.m.b.p`, `vM.m.b.p-notes` as you see fit, but at the very least, stick to the `vM.m` (major, minor version) as a start.
 
+Bad examples:
+
+- `version-0.1`
+- `0.1`
+
+Good examples:
+
+- `v1.0`
+- `v1.0.1`
+
 ## 4. Special branches and branching strategy
 
-4.1. Keep the following branches with special meaning:
+**4.1.** Keep the following branches with special meaning:
 
 - `develop`: main development branch. Code should reach this branch after being reviewed by the proper approvers. This is where new features branches start from.
 - `release`: the release candidate for your next upcoming release. If you have multiple releases happening simultaneously, feel free to have several `release-xxx` branches. (Replace `xxx` with a description that suits you.) This is where bugfixing branches for the release start from.
 - `master`: the latest version of your production environment. This is where hotfix branches start from.
 
+If you happen to use continuous delivery for the development, QA and production environments, `develop`, `qa` and `production` are also good alternatives for these names, but keep in mind that forked repositories will not keep the CD system configured.
+
 ## 5. Merges
 
-5.1. Avoid merge commits.
+**5.1.** Avoid merge commits
 
 A proper exception could be when a frozen branch (like a production branch) is back-merged into the development branch. In such a case, you don't want to alter the production branch at all. For all other merges of the day to day development, look to have a linear code history.
 
+Use `git merge --squash` or `git rebase -i` (and squash all commits).
+
+**5.2.** Include the tracking ticket number in the resulting squashed commit
+
+Make sure the message of the last commit has the ticket number of the tracking change. This helps both finding a commit knowing the request, and finding the original request knowing what the change (commit) is.
+
+Bad examples:
+
+- `Fixed memory leak`
+- `Updated main page styles`
+
+Good examples:
+
+- `[CFP-114] Removed unused event handlers`
+- `[CFP-110] Updated main page styles`
+
+**5.2.1.** It is ok to have multiple commits for the same ticket. It may have taken several tries to achieve it, or it may just be very complicated for a single commit. Prioritize readability and traceability over having less commits.
