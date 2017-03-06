@@ -21,12 +21,12 @@ This also follows the standard for automatic messages created from git ("Merge b
 Bad examples:
 
 - `Updating styles`
-- `Update styles`
+- `Updated styles`
 
 Good examples:
 
-- `Updated styles`
-- `Refactored mainComponent.js`
+- `Update styles`
+- `Refactor mainComponent.js`
 
 **1.2.** Limit your commit message to 80 characters in the first line.
 
