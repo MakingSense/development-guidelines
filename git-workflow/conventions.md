@@ -12,9 +12,11 @@ In our day to day with git, we follow certain conventions that make it easy for 
 
 ## 1. Commit messages
 
-**1.1.** Use commit messages in the past tense.
+**1.1.** Use commit messages in the present imperative tense.
 
-Commits are a snapshot of the repository status in a particular state, so the commit explains what last changes were already applied to it. It is easier to reason about what latest changes had been introduced in a particular commit.
+Commits are an indication of which changes will be applied when the commit is introduced in a codebase. As such, it should answer the question: "What will this commit do?" "It will _fix the bug_" or "_refactor the code_", etc.
+
+This also follows the standard for automatic messages created from git ("Merge branch..."), it preserves consistency against project tracking systems (which are almost always in the present imperative tense too) and it is a good suggestion for systems like GitHub and BitBucket to suggest a PR name when they use this message.
 
 Bad examples:
 
@@ -99,7 +101,7 @@ Good examples:
 
 - `add-asterisk-to-wildcard-support`
 
-**2.1.** Do NOT include your username or the current date in the branch name.
+**2.3.** Do NOT include your username or the current date in the branch name.
 
 That information is already present in the commit itself.
 
@@ -111,7 +113,9 @@ Good examples:
 
 - `fix-my-bug`
 
-**2.2.** Include the ticket name in the branch name
+**2.4.** Include the ticket identifier in the branch name
+
+Use the ticket identifier from your project tracking system to help identify what problem is this codebase trying to solve.
 
 Bad examples:
 
@@ -127,6 +131,8 @@ Good examples:
 
 You can extend it to `vM.m.b`, `vM.m.b.p`, `vM.m.b.p-notes` as you see fit, but at the very least, stick to the `vM.m` (major, minor version) as a start.
 
+If you're building an environment that is naturally versioned with four numbers (like .NET builds), then use four numbers instead of three. If you're building in an environment with does not have a natural versioning system, stick to [semver](http://semver.org/).
+
 Bad examples:
 
 - `version-0.1`
@@ -136,6 +142,7 @@ Good examples:
 
 - `v1.0`
 - `v1.0.1`
+- `v1.0.0-beta`
 
 ## 4. Special branches and branching strategy
 
