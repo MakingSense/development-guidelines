@@ -70,7 +70,7 @@ _(Takeaways: commits messages, testing)_
 
 Dimitri will start making changes to files in his local repository. Every once in a while, he'll reach a state of some progress, a state that he'd like to remember in case something goes wrong later.
 
-So, Dimitri decides to _commit_ his changes so far. And he does this multiple times, as he keeps making progress
+So, Dimitri decides to _commit_ his changes so far. And he does this multiple times, as he keeps making progress.
 
 <img src="images/workStartedWithSomeCommits.png" alt="Work started with some commits" align="left" />
 
@@ -101,7 +101,7 @@ git fetch origin --prune
 
 <img src="images/secondBranchMerged.png" alt="second branch merged" align="left" />
 
-This being the case, Dimitri will bave to re-base his changes. This is, changing the base of his changes so that his commits start from the new latest version of `master`.
+This being the case, Dimitri will have to re-base his changes. This is, changing the base of his changes so that his commits start from the new latest version of `master`.
 
 ```console
 git rebase master
