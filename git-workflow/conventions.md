@@ -34,15 +34,15 @@ Some tools, including console and GitHub are optimized for message sizes of abou
 
 Bad examples:
 
-- `Refactored mainComponent.js to avoid memory leaks on the second $scope.$digest() loop`
-- `Updated mainComponent.js`
+- `Refactor mainComponent.js to avoid memory leaks on the second $scope.$digest() loop`
+- `Update mainComponent.js`
 
 Good examples:
 
 - Example 1:
 
     ```
-    Refactored mainComponent.js
+    Refactor mainComponent.js
 
     Removed manual calls to $scope.$digest() to avoid events being invoked even when they already where unhooked.
     ```
@@ -50,30 +50,30 @@ Good examples:
 - Example 2:
 
     ```
-    Removed $scope.$digest() calls from mainComponent.js
+    Remove $scope.$digest() calls from mainComponent.js
     ```
 
 **1.3.** Always include what changes you _did_ and not what you _intended to do_. Only time will tell if you achieved your real purpose, but the message will stay like that forever. Don't be afraid to include technical details -- this is for developers after all.
 
 Bad examples:
 
-- `Fixed memory leaks`
-- `Fixed CFP-124`
+- `Fix memory leaks`
+- `Fix CFP-124`
 
 Good examples:
 
-- `Removed event handlers after use in main component loop`
-- `Added cancellation token to async methods`
+- `Remove event handlers after use in main component loop`
+- `Add cancellation token to async methods`
 
 **1.4.** Final sentence period: Nope.
 
 Bad example:
 
-- `Removed event handlers after use in main component loop.`
+- `Remove event handlers after use in main component loop.`
 
 Good example:
 
-- `Removed event handlers after use in main component loop`
+- `Remove event handlers after use in main component loop`
 
 ## 2. Branch names
 
@@ -168,12 +168,12 @@ Make sure the message of the last commit has the ticket number of the tracking c
 
 Bad examples:
 
-- `Fixed memory leak`
-- `Updated main page styles`
+- `Fix memory leak`
+- `Update main page styles`
 
 Good examples:
 
-- `[CFP-114] Removed unused event handlers`
-- `[CFP-110] Updated main page styles`
+- `[CFP-114] Remove unused event handlers`
+- `[CFP-110] Update main page styles`
 
 **5.2.1.** It is ok to have multiple commits for the same ticket. It may have taken several tries to achieve it, or it may just be very complicated for a single commit. Prioritize readability and traceability over having less commits.
