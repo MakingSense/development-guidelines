@@ -1,4 +1,4 @@
-These guides contain the same copyright as the one indicated at [the root of the repository](../LICENCE.md).
+These guides contain the same copyright as the one indicated at [the root of the repository](../LICENSE).
 
 Attributions:
 
