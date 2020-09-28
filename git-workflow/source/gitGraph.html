@@ -1003,7 +1003,7 @@
    * @param {GitGraph} options.parent - GitGraph constructor
    * @param {Number} options.x - Position X (dot)
    * @param {Number} options.y - Position Y (dot)
-   * @param {String} options.color - Master color (dot & message)
+   * @param {String} options.color - main color (dot & message)
    * @param {Boolean} options.arrowDisplay - Add a arrow under commit dot
    * @param {String} [options.author = this.parent.author] - Author name & email
    * @param {String} [options.date] - Date of commit, default is now
@@ -1341,7 +1341,7 @@
    * @param {Number} [options.commit.spacingX] - Space between commits
    * @param {Number} [options.commit.spacingY] - Space between commits
    * @param {Number} [options.commit.widthExtension = 0]  - Additional width to be added to the calculated width
-   * @param {String} [options.commit.color] - Master commit color (dot & message)
+   * @param {String} [options.commit.color] - main commit color (dot & message)
    * @param {String} [options.commit.dot.color] - Commit dot color
    * @param {Number} [options.commit.dot.size] - Commit dot size
    * @param {Number} [options.commit.dot.strokeWidth] - Commit dot stroke width
@@ -1846,8 +1846,8 @@
 					elementId: 'initialCommitGraph'
 				});
 
-				let master = gitGraph.branch('master');
-				master = master.commit('Initial commit');
+				let main = gitGraph.branch('main');
+				main = main.commit('Initial commit');
 			}());
 		</script>
 
@@ -1862,10 +1862,10 @@
 					elementId: 'workStartedGraph'
 				});
 
-				let master = gitGraph.branch('master');
-				master = master.commit('Initial commit');
+				let main = gitGraph.branch('main');
+				main = main.commit('Initial commit');
 				let featureBranch = gitGraph.branch({
-					parentBranch: master,
+					parentBranch: main,
 					name: 'CFP-25-new-login-page'
 				});
 				featureBranch.commit('(pending changes)');
@@ -1883,16 +1883,16 @@
 					elementId: 'workStartedGraphParallel'
 				});
 
-				let master = gitGraph.branch('master');
-				master = master.commit('Initial commit');
+				let main = gitGraph.branch('main');
+				main = main.commit('Initial commit');
 				let featureBranch = gitGraph.branch({
-					parentBranch: master,
+					parentBranch: main,
 					name: 'CFP-25-new-login-page'
 				});
 				featureBranch.commit('(pending changes)');
 
 				let secondFeatureBranch = gitGraph.branch({
-					parentBranch:  master,
+					parentBranch:  main,
 					name: 'CFP-26-rework-styles'
 				});
 				secondFeatureBranch.commit('(pending changes');
@@ -1909,11 +1909,11 @@
 					elementId: 'workStartedWithSomeCommits'
 				});
 
-				let master = gitGraph.branch('master');
-				master.commit('Initial commit');
+				let main = gitGraph.branch('main');
+				main.commit('Initial commit');
 
-				let featureBranch = master.branch('CFP-25-new-login-page');
-				let secondFeatureBranch = master.branch('CFP-26-rework-styles');
+				let featureBranch = main.branch('CFP-25-new-login-page');
+				let secondFeatureBranch = main.branch('CFP-26-rework-styles');
 
 				featureBranch.commit('Created page');
 				secondFeatureBranch.commit('(pending changes');
@@ -1932,15 +1932,15 @@
 					elementId: 'secondBranchMerged'
 				});
 
-				let master = gitGraph.branch('master');
-				master.commit('Initial commit');
+				let main = gitGraph.branch('main');
+				main.commit('Initial commit');
 
-				let featureBranch = master.branch('CFP-25-new-login-page');
+				let featureBranch = main.branch('CFP-25-new-login-page');
 
 				featureBranch.commit('Created page');
 				featureBranch.commit('Added basic styles')
 					.commit('Added required fields validation');
-				master.commit("Paul's changes");
+				main.commit("Paul's changes");
 			}());
 		</script>
 
@@ -1954,11 +1954,11 @@
 					elementId: 'featureBranchRebased'
 				});
 
-				let master = gitGraph.branch('master');
-				master.commit('Initial commit');
-				master.commit("Paul's changes");
+				let main = gitGraph.branch('main');
+				main.commit('Initial commit');
+				main.commit("Paul's changes");
 
-				let featureBranch = master.branch('CFP-25-new-login-page');
+				let featureBranch = main.branch('CFP-25-new-login-page');
 
 				featureBranch.commit('Created page');
 				featureBranch.commit('Added basic styles')
@@ -1976,16 +1976,16 @@
 					elementId: 'featureBranchMerged'
 				});
 
-				let master = gitGraph.branch('master');
-				master.commit('Initial commit');
-				master.commit("Paul's changes");
+				let main = gitGraph.branch('main');
+				main.commit('Initial commit');
+				main.commit("Paul's changes");
 
-				let featureBranch = master.branch('CFP-25-new-login-page');
+				let featureBranch = main.branch('CFP-25-new-login-page');
 
 				featureBranch.commit('Created page');
 				featureBranch.commit('Added basic styles')
 					.commit('Added required fields validation');
-				master.commit("Dimitri's changes");
+				main.commit("Dimitri's changes");
 			}());
 		</script>
 
@@ -1999,10 +1999,10 @@
 					elementId: 'workflowFinished'
 				});
 
-				let master = gitGraph.branch('master');
-				master.commit('Initial commit');
-				master.commit("Paul's changes");
-				master.commit("Dimitri's changes");
+				let main = gitGraph.branch('main');
+				main.commit('Initial commit');
+				main.commit("Paul's changes");
+				main.commit("Dimitri's changes");
 			}());
 		</script>
 	</body>
