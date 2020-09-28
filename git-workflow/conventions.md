@@ -150,7 +150,7 @@ Good examples:
 
 - `develop`: main development branch. Code should reach this branch after being reviewed by the proper approvers. This is where new features branches start from.
 - `release`: the release candidate for your next upcoming release. If you have multiple releases happening simultaneously, feel free to have several `release-xxx` branches. (Replace `xxx` with a description that suits you.) This is where bugfixing branches for the release start from.
-- `master`: the latest version of your production environment. This is where hotfix branches start from.
+- `main`: the latest version of your production environment. This is where hotfix branches start from.
 
 If you happen to use continuous delivery for the development, QA and production environments, `develop`, `qa` and `production` are also good alternatives for these names, but keep in mind that forked repositories will not keep the CD system configured.
 
